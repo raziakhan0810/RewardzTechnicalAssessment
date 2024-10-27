@@ -33,8 +33,8 @@ A Django web application for managing student book rental with integration to th
 1. **Clone the Repository**
 
    ```bash
-   git clone https://github.com/yourusername/bookrental.git
-   cd bookrental
+   git clone https://github.com/yourusername/RewardzTechnicalAssessment.git
+   cd RewardzTechnicalAssessment
 
 2. **Create and Activate Virtual Environment**
 
