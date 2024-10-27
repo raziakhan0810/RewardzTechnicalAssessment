@@ -1,5 +1,3 @@
-# rental/tests.py
-
 from django.test import TestCase
 from django.contrib.auth.models import User
 from .models import Book, Rental
@@ -32,10 +30,10 @@ class RentalTestCase(TestCase):
     def test_start_rental_view(self):
         self.client.login(username='student1', password='pass')
         response = self.client.post(reverse('rental:start_rental'), {'user': self.user.id, 'book_title': 'Python'})
-        self.assertEqual(response.status_code, 302)  # Seharusnya redirect setelah berhasil
+        self.assertEqual(response.status_code, 302)
 
     def test_extend_rental_view(self):
         rental = Rental.objects.create(user=self.user, book=self.book)
         self.client.login(username='student1', password='pass')
         response = self.client.post(reverse('rental:extend_rental'), {'rental': rental.id})
-        self.assertEqual(response.status_code, 302)  # Seharusnya redirect setelah berhasil
+        self.assertEqual(response.status_code, 302)

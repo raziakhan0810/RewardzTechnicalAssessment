@@ -1,10 +1,7 @@
-# rentals/admin.py
-
 from django.contrib import admin
 from .models import Book, Rental
 
 
-@admin.register(Book)
 class BookAdmin(admin.ModelAdmin):
     """
     Admin interface for Book model.
@@ -13,7 +10,6 @@ class BookAdmin(admin.ModelAdmin):
     search_fields = ('title',)
 
 
-@admin.register(Rental)
 class RentalAdmin(admin.ModelAdmin):
     """
     Admin interface for Rental model.
@@ -22,3 +18,6 @@ class RentalAdmin(admin.ModelAdmin):
     list_filter = ('extended',)
     search_fields = ('user__username', 'book__title')
     date_hierarchy = 'rental_date'
+
+admin.register(Book, BookAdmin)
+admin.register(Rental, RentalAdmin)
